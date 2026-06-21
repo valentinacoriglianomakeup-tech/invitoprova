@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I&V Wedding Invite</title>
+<style>
+body{
+margin:0;background:#eef2ea;font-family:serif;
+display:flex;justify-content:center;align-items:center;height:100vh;
+}
+.container{position:relative;width:380px;cursor:pointer}
+.envelope{
+width:100%;border-radius:12px;
+transition:transform 1s ease, opacity 1s ease;
+box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+.card{
+position:absolute;inset:0;
+background:white;border-radius:12px;
+display:flex;flex-direction:column;
+justify-content:center;align-items:center;
+padding:30px;box-sizing:border-box;
+transform:translateY(60px) scale(.9);
+opacity:0;transition:all 1.2s ease;
+box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+.open .envelope{transform:translateY(120px);opacity:0;}
+.open .card{transform:translateY(-20px) scale(1);opacity:1;}
+h1{margin:0;font-size:42px}
+p{text-align:center}
+</style>
+</head>
+<body>
+<div class="container" id="invite">
+<img src="invito.png" class="envelope" alt="Invito">
+<div class="card">
+<h1>I & V</h1>
+<p>Benvenuti al nostro matrimonio</p>
+<p>Sostituisci qui data, luogo e dettagli.</p>
+</div>
+</div>
+<script>
+document.getElementById('invite').addEventListener('click',()=>{
+document.getElementById('invite').classList.toggle('open');
+});
+</script>
+</body>
+</html>
